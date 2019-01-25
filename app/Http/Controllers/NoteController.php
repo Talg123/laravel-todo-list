@@ -15,7 +15,9 @@ class NoteController extends Controller
     {
     
     }
-
+    /**
+     * returning all the notes
+     */
     public function index()
     {        
         $notes = Note::get()->all();
@@ -26,6 +28,9 @@ class NoteController extends Controller
 
     }
 
+    /**
+     * creates note
+     */
     public function create()
     {
         $payload['content'] = request()->get("content");
@@ -37,6 +42,9 @@ class NoteController extends Controller
         ]);
     }
 
+    /**
+     * update the selected note
+     */
     public function update()
     {
         $payload['id'] = request()->get('id');
@@ -50,6 +58,9 @@ class NoteController extends Controller
         ]);
     }
 
+    /**
+     * remove the selected note
+     */
     public function delete()
     {
         $payload['id'] = request()->get('id');
